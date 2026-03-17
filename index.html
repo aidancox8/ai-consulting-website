@@ -4,103 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aevon | AI & Microsoft 365 Consulting for SMBs</title>
-  <meta name="description" content="Aevon helps Lower Mainland businesses build AI-powered workflows and internal systems on Microsoft 365 — the platform you're already paying for." />
+  <meta name="description" content="Aevon helps Lower Mainland businesses build AI-powered workflows and internal systems on Microsoft 365." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --indigo:     #6366F1;
-      --indigo-dk:  #4F46E5;
-      --indigo-lt:  #EEF2FF;
-      --sky:        #38BDF8;
-      --dark:       #0A0F1E;
-      --dark-2:     #0F172A;
-      --dark-3:     #1E293B;
-      --slate:      #334155;
-      --text:       #0F172A;
-      --text-sm:    #64748B;
-      --border:     #E2E8F0;
-      --bg-alt:     #F8FAFC;
-      --white:      #FFFFFF;
-      --radius:     12px;
-      --radius-lg:  20px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      padding: 0 32px;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    nav.scrolled {
-      background: rgba(10, 15, 30, 0.92);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo-mark {
-      width: 32px;
-      height: 32px;
-    }
-    .nav-logo-text {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.7);
-      font-weight: 500;
-      font-size: 0.92rem;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--indigo);
-      color: var(--white) !important;
-      padding: 9px 22px;
-      border-radius: 8px;
-      font-weight: 600 !important;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--indigo-dk) !important; }
-
     /* ── HERO ── */
     #hero {
       background: var(--dark);
@@ -127,12 +36,7 @@
       background: radial-gradient(ellipse, rgba(56,189,248,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -154,10 +58,7 @@
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
     h1 {
       font-size: clamp(2.6rem, 5.5vw, 4.2rem);
       font-weight: 800;
@@ -178,45 +79,9 @@
       color: rgba(255,255,255,0.6);
       max-width: 560px;
       margin-bottom: 40px;
-      font-weight: 400;
       line-height: 1.7;
     }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-size: 0.97rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--indigo);
-      color: var(--white);
-    }
-    .btn-primary:hover { background: var(--indigo-dk); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
-    .btn-dark {
-      background: var(--dark-2);
-      color: var(--white);
-      border: 1px solid var(--dark-3);
-    }
-    .btn-dark:hover { background: var(--dark-3); transform: translateY(-1px); }
-
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
     .hero-stats {
       display: flex;
       gap: 48px;
@@ -225,48 +90,11 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       flex-wrap: wrap;
     }
-    .stat-item {}
-    .stat-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      margin-top: 4px;
-    }
-
-    /* ── SECTIONS ── */
-    section { padding: 100px 32px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--indigo);
-      margin-bottom: 12px;
-    }
-    h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .section-sub {
-      color: var(--text-sm);
-      max-width: 540px;
-      margin-bottom: 60px;
-      font-size: 1rem;
-    }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1; }
+    .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
 
     /* ── PROBLEM ── */
     #problem { background: var(--dark-2); padding: 80px 32px; }
-    #problem h2 { color: var(--white); }
     .problem-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -276,17 +104,9 @@
       align-items: center;
     }
     .problem-text .section-label { color: #818CF8; }
-    .problem-text h2 { margin-bottom: 20px; }
-    .problem-text p {
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-    .problem-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .problem-text h2 { color: var(--white); margin-bottom: 20px; }
+    .problem-text p { color: rgba(255,255,255,0.6); margin-bottom: 16px; font-size: 1rem; }
+    .problem-cards { display: flex; flex-direction: column; gap: 16px; }
     .problem-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -296,35 +116,22 @@
       align-items: flex-start;
       gap: 16px;
     }
-    .problem-icon {
-      font-size: 1.4rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .problem-card h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .problem-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      margin: 0;
-    }
+    .problem-icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+    .problem-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .problem-card p { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin: 0; }
 
-    /* ── SERVICES ── */
+    /* ── SERVICES TEASER ── */
     #services { background: var(--white); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-bottom: 40px;
     }
     .service-card {
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 32px 28px;
+      padding: 28px 24px;
       background: var(--white);
       transition: all 0.25s;
       position: relative;
@@ -339,78 +146,23 @@
       opacity: 0;
       transition: opacity 0.25s;
     }
-    .service-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      transform: translateY(-3px);
-      border-color: transparent;
-    }
+    .service-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); border-color: transparent; }
     .service-card:hover::before { opacity: 1; }
-    .service-card.featured {
-      border-color: var(--indigo);
-      background: var(--indigo-lt);
-    }
+    .service-card.featured { border-color: var(--indigo); background: var(--indigo-lt); }
     .service-card.featured::before { opacity: 1; }
-    .service-num {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-sm);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
+    .service-num { font-size: 0.73rem; font-weight: 700; color: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
     .service-card.featured .service-num { color: var(--indigo); }
-    .service-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-    .service-price {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--indigo);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .service-price span {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--text-sm);
-    }
-    .service-desc {
-      font-size: 0.875rem;
-      color: var(--text-sm);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    .service-includes {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .service-includes li {
-      font-size: 0.85rem;
-      color: var(--text);
-      display: flex;
-      gap: 9px;
-      align-items: flex-start;
-    }
-    .service-includes li::before {
-      content: '';
-      width: 5px; height: 5px;
-      background: var(--indigo);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .service-price { font-size: 1.3rem; font-weight: 800; color: var(--indigo); letter-spacing: -0.02em; margin-bottom: 10px; }
+    .service-price span { font-size: 0.82rem; font-weight: 400; color: var(--text-sm); }
+    .service-desc { font-size: 0.85rem; color: var(--text-sm); line-height: 1.6; }
+    .services-cta { text-align: center; }
 
     /* ── CASE STUDIES ── */
     #work { background: var(--bg-alt); }
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
     .work-card {
@@ -432,24 +184,9 @@
       border-radius: 100px;
       margin-bottom: 20px;
     }
-    .work-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-    .work-card p {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 24px;
-      line-height: 1.65;
-    }
-    .work-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .work-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; letter-spacing: -0.01em; }
+    .work-card p { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 24px; line-height: 1.65; }
+    .work-stack { display: flex; flex-wrap: wrap; gap: 8px; }
     .stack-tag {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
@@ -458,86 +195,6 @@
       font-weight: 500;
       padding: 4px 10px;
       border-radius: 6px;
-    }
-
-    /* ── RETAINER / PRICING ── */
-    #pricing { background: var(--white); }
-    .pricing-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-    .pricing-intro p { color: var(--text-sm); font-size: 0.97rem; }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .pricing-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px 30px;
-      background: var(--white);
-      transition: all 0.25s;
-    }
-    .pricing-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .pricing-card.featured {
-      background: var(--dark-2);
-      border-color: transparent;
-      box-shadow: 0 0 0 2px var(--indigo), 0 20px 60px rgba(99,102,241,0.2);
-    }
-    .pricing-tier {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-sm);
-      margin-bottom: 8px;
-    }
-    .pricing-card.featured .pricing-tier { color: #818CF8; }
-    .pricing-amount {
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .pricing-card.featured .pricing-amount { color: var(--white); }
-    .pricing-amount span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text-sm);
-      letter-spacing: 0;
-    }
-    .pricing-size {
-      font-size: 0.82rem;
-      color: var(--text-sm);
-      margin-bottom: 28px;
-    }
-    .pricing-card.featured .pricing-size { color: rgba(255,255,255,0.45); }
-    .pricing-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .pricing-list li {
-      font-size: 0.88rem;
-      color: var(--text-sm);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .pricing-card.featured .pricing-list li { color: rgba(255,255,255,0.6); }
-    .pricing-list li::before {
-      content: '';
-      width: 16px; height: 16px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236366F1' d='M13.5 3.5L6 11 2.5 7.5l-1 1L6 13l8.5-8.5z'/%3E%3C/svg%3E") center/contain no-repeat;
-      flex-shrink: 0;
-      margin-top: 2px;
     }
 
     /* ── PROCESS ── */
@@ -559,12 +216,7 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent);
     }
-    .process-step {
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    }
+    .process-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
     .step-circle {
       width: 56px; height: 56px;
       border-radius: 50%;
@@ -578,39 +230,14 @@
       font-weight: 800;
       color: var(--indigo);
     }
-    .process-step h4 {
-      font-size: 0.97rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .process-step p {
-      font-size: 0.83rem;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.6;
-    }
+    .process-step h4 { font-size: 0.97rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .process-step p { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
 
     /* ── STACK ── */
     #stack { background: var(--bg-alt); padding: 60px 32px; }
-    .stack-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .stack-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-sm);
-      margin-bottom: 32px;
-    }
-    .stack-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
+    .stack-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .stack-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-sm); margin-bottom: 32px; }
+    .stack-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .stack-pill {
       background: var(--white);
       border: 1px solid var(--border);
@@ -621,161 +248,27 @@
       border-radius: 100px;
       transition: all 0.2s;
     }
-    .stack-pill:hover {
-      border-color: var(--indigo);
-      color: var(--indigo);
-      background: var(--indigo-lt);
-    }
+    .stack-pill:hover { border-color: var(--indigo); color: var(--indigo); background: var(--indigo-lt); }
 
-    /* ── CTA / CONTACT ── */
-    #contact { background: var(--white); }
-    .contact-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .contact-left h2 { margin-bottom: 16px; }
-    .contact-left p { color: var(--text-sm); font-size: 0.97rem; margin-bottom: 32px; }
-    .contact-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-    }
-    .contact-row-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: var(--indigo-lt);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .contact-row a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contact-row a:hover { color: var(--indigo); }
-    .contact-form {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 11px 14px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: var(--text);
-      background: var(--white);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--indigo);
-      box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--indigo);
-      color: var(--white);
-      border: none;
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.97rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 4px;
-    }
-    .form-submit:hover { background: var(--indigo-dk); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99,102,241,0.35); }
-    .form-note { font-size: 0.78rem; color: var(--text-sm); margin-top: 12px; text-align: center; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark);
-      padding: 48px 32px;
-    }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .footer-logo-text {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-    .footer-right {
-      text-align: right;
-      font-size: 0.83rem;
-      color: rgba(255,255,255,0.35);
-    }
-    .footer-right a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    .footer-right a:hover { color: var(--white); }
+    /* ── CTA STRIP ── */
+    #cta { background: var(--indigo); padding: 80px 32px; }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    #cta h2 { color: var(--white); margin-bottom: 12px; }
+    #cta p { color: rgba(255,255,255,0.75); margin-bottom: 32px; font-size: 1.05rem; }
+    .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-white { background: var(--white); color: var(--indigo); }
+    .btn-white:hover { background: var(--indigo-lt); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .problem-inner,
-      .pricing-intro,
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .problem-inner { grid-template-columns: 1fr; gap: 40px; }
       .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
       .process-steps::before { display: none; }
     }
     @media (max-width: 640px) {
-      section { padding: 72px 20px; }
-      nav { padding: 0 20px; }
       #hero { padding: 110px 20px 80px; }
-      .nav-links { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
-      .footer-right { text-align: center; }
       .hero-stats { gap: 28px; }
+      .process-steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -784,25 +277,19 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="url(#lg1)"/>
         <path d="M16 7L8 13v12h5v-7h6v7h5V13L16 7z" fill="white" fill-opacity="0.9"/>
         <circle cx="16" cy="12" r="2" fill="white"/>
-        <defs>
-          <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#6366F1"/>
-            <stop offset="1" stop-color="#38BDF8"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="lg1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
       </svg>
       <span class="nav-logo-text">Aevon</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#pricing">Retainer</a></li>
-      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+      <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
     </ul>
   </div>
 </nav>
@@ -812,36 +299,21 @@
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
   <div class="hero-inner">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      M365 + AI Consulting for BC Businesses
-    </div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span>M365 + AI Consulting for BC Businesses</div>
     <h1>Your team is paying for<br><span class="gradient-text">powerful tools.</span><br>We make them work.</h1>
     <p class="hero-sub">Most small businesses use less than 20% of their Microsoft 365 subscription. Aevon builds the automations, AI systems, and internal platforms that close that gap — without replacing the tools you already pay for.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">
+      <a href="contact.html" class="btn btn-primary">
         Book a Free Discovery Call
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#services" class="btn btn-outline">See What We Build</a>
+      <a href="services.html" class="btn btn-outline">See What We Build</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">5–50</div>
-        <div class="stat-label">employees, ideal range</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">M365</div>
-        <div class="stat-label">primary platform</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">30 min</div>
-        <div class="stat-label">free discovery call</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">BC</div>
-        <div class="stat-label">Lower Mainland based</div>
-      </div>
+      <div class="stat-item"><div class="stat-num">5–50</div><div class="stat-label">employees, ideal range</div></div>
+      <div class="stat-item"><div class="stat-num">M365</div><div class="stat-label">primary platform</div></div>
+      <div class="stat-item"><div class="stat-num">30 min</div><div class="stat-label">free discovery call</div></div>
+      <div class="stat-item"><div class="stat-num">BC</div><div class="stat-label">Lower Mainland based</div></div>
     </div>
   </div>
 </section>
@@ -851,8 +323,8 @@
   <div class="problem-inner">
     <div class="problem-text">
       <div class="section-label">The Gap</div>
-      <h2>Big consulting firms don't serve you. Generic freelancers don't know M365.</h2>
-      <p>If you're a business with 10–50 employees, you've probably experienced this: Microsoft's partners only care about enterprise accounts, and most "AI consultants" pitch tools you'd need to pay for separately.</p>
+      <h2>Big firms don't serve you. Generic consultants don't know M365.</h2>
+      <p>If you're a business with 10–50 employees, you've probably experienced this: Microsoft's partners only care about enterprise accounts, and most "AI consultants" pitch tools you'd need to pay for on top of what you already have.</p>
       <p>Aevon sits in that gap. Deep M365 expertise, AI integration experience, and a focus exclusively on businesses your size in the Lower Mainland.</p>
     </div>
     <div class="problem-cards">
@@ -873,7 +345,7 @@
       <div class="problem-card">
         <div class="problem-icon">🤖</div>
         <div>
-          <h4>AI that actually fits your business</h4>
+          <h4>AI built around your business</h4>
           <p>Not generic ChatGPT prompts. AI that knows your documents, answers your team's questions, and connects to your workflows.</p>
         </div>
       </div>
@@ -888,72 +360,43 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES TEASER -->
 <section id="services">
   <div class="container">
     <div class="section-label">What We Build</div>
     <h2>Services and Packages</h2>
-    <p class="section-sub">Every engagement starts with a free 30-minute discovery call. No commitment, no sales pitch — just an honest look at where your biggest wins are.</p>
-
+    <p class="section-sub">Four ways to work with Aevon — from a focused audit to a complete internal platform build. Every engagement starts with a free 30-minute discovery call.</p>
     <div class="services-grid">
-
       <div class="service-card">
         <div class="service-num">01 / Starter</div>
         <h3>M365 Audit + Automation</h3>
         <div class="service-price">$500 <span>– $800</span></div>
-        <p class="service-desc">Best for businesses that feel like they're not getting value from their M365 subscription and want a clear starting point.</p>
-        <ul class="service-includes">
-          <li>Full M365 environment audit</li>
-          <li>3 custom Power Automate flows</li>
-          <li>Basic AI integration (Copilot setup)</li>
-          <li>1hr walkthrough and training session</li>
-          <li>30 days email support</li>
-        </ul>
+        <p class="service-desc">Full M365 audit, 3 custom Power Automate flows, and basic AI integration. Best starting point for most businesses.</p>
       </div>
-
       <div class="service-card featured">
         <div class="service-num">02 / Knowledge Base</div>
         <h3>SharePoint Intranet + AI Wiki</h3>
         <div class="service-price">$1,000 <span>– $2,000</span></div>
-        <p class="service-desc">For businesses with scattered documents, no central knowledge system, and painful onboarding experiences.</p>
-        <ul class="service-includes">
-          <li>SharePoint intranet setup and branding</li>
-          <li>AI-powered company wiki with Q&A</li>
-          <li>Document organization and migration</li>
-          <li>Manager training on content management</li>
-          <li>60 days email support</li>
-        </ul>
+        <p class="service-desc">A central knowledge hub with AI-powered Q&A. Employees ask questions, get answers sourced from your own documents.</p>
       </div>
-
       <div class="service-card">
         <div class="service-num">03 / Full Build</div>
         <h3>Complete Internal Platform</h3>
         <div class="service-price">$2,500 <span>– $5,000</span></div>
-        <p class="service-desc">Best for growing SMBs with 20–50 employees who have no centralized internal systems and are feeling the disorganization.</p>
-        <ul class="service-includes">
-          <li>Full SharePoint intranet with branding</li>
-          <li>AI wiki with document ingestion</li>
-          <li>Role-based onboarding module</li>
-          <li>Power Automate workflows (up to 5)</li>
-          <li>Team directory and announcements</li>
-          <li>Staff training session</li>
-          <li>90 days email support</li>
-        </ul>
+        <p class="service-desc">Everything included — intranet, AI wiki, onboarding module, automations, and staff training. Built for 20–50 person teams.</p>
       </div>
-
       <div class="service-card">
         <div class="service-num">04 / Custom</div>
         <h3>Scoped to Your Needs</h3>
-        <div class="service-price" style="font-size:1.15rem; padding-top:4px;">Custom quote</div>
-        <p class="service-desc">Not everything fits a package. If you have a specific problem or need a combination of services, we'll scope it out together.</p>
-        <ul class="service-includes">
-          <li>Free 30-minute discovery call</li>
-          <li>Detailed written scope of work</li>
-          <li>Fixed-price quote before any work starts</li>
-          <li>Any combination of the above services</li>
-        </ul>
+        <div class="service-price" style="font-size:1.1rem; padding-top:4px;">Custom quote</div>
+        <p class="service-desc">Not everything fits a package. Fixed-price quote provided after a free discovery call — no work starts until you approve it.</p>
       </div>
-
+    </div>
+    <div class="services-cta">
+      <a href="services.html" class="btn btn-ghost">
+        See Full Package Details
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -964,9 +407,7 @@
     <div class="section-label">Selected Work</div>
     <h2>What we've built</h2>
     <p class="section-sub">Projects delivered for internal teams — anonymized, but real. Same approach, same stack, available for your business.</p>
-
     <div class="work-grid">
-
       <div class="work-card">
         <span class="work-tag">AI Knowledge Base</span>
         <h3>Company Wiki with Conversational AI</h3>
@@ -978,86 +419,26 @@
           <span class="stack-tag">SharePoint</span>
         </div>
       </div>
-
       <div class="work-card">
         <span class="work-tag">Automation</span>
         <h3>IT Ticketing with Automated Workflows</h3>
-        <p>Replaced a manual, email-based IT support process with a structured ticketing system. Automated routing, status notifications, and escalation flows — cutting response time significantly.</p>
+        <p>Replaced a manual, email-based IT support process with a structured ticketing system. Automated routing, status notifications, and escalation flows.</p>
         <div class="work-stack">
           <span class="stack-tag">Power Automate</span>
           <span class="stack-tag">SharePoint</span>
           <span class="stack-tag">Teams</span>
         </div>
       </div>
-
       <div class="work-card">
         <span class="work-tag">Onboarding</span>
         <h3>Role-Based Onboarding Module</h3>
-        <p>New hires are automatically guided through a structured training path based on their role and department. Managers see progress in real time — no manual handholding required.</p>
+        <p>New hires are automatically guided through a structured training path based on their role and department. Managers see progress in real time.</p>
         <div class="work-stack">
           <span class="stack-tag">SharePoint</span>
           <span class="stack-tag">Power Automate</span>
           <span class="stack-tag">M365</span>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- RETAINER PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="pricing-intro">
-      <div>
-        <div class="section-label">Ongoing Partnership</div>
-        <h2>Retainer Plans</h2>
-      </div>
-      <div>
-        <p>Most clients stay on a retainer after their initial project. New automations get added, things get refined, and your systems grow with your team. Retainers are available to project clients first.</p>
-      </div>
-    </div>
-
-    <div class="pricing-grid">
-
-      <div class="pricing-card">
-        <div class="pricing-tier">Basic</div>
-        <div class="pricing-amount">$150 <span>/mo</span></div>
-        <div class="pricing-size">Best for 5–15 employees</div>
-        <ul class="pricing-list">
-          <li>Monthly check-in call (30 min)</li>
-          <li>Up to 2hrs of changes per month</li>
-          <li>Email support, 48hr response</li>
-          <li>Minor fixes and updates</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Standard</div>
-        <div class="pricing-amount">$300 <span>/mo</span></div>
-        <div class="pricing-size">Best for 15–35 employees</div>
-        <ul class="pricing-list">
-          <li>Monthly check-in call (1hr)</li>
-          <li>Up to 5hrs of development per month</li>
-          <li>Priority support, 24hr response</li>
-          <li>New automation flows as needed</li>
-          <li>Performance and usage review</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-tier">Pro</div>
-        <div class="pricing-amount">$600 <span>/mo</span></div>
-        <div class="pricing-size">Best for 35–75 employees</div>
-        <ul class="pricing-list">
-          <li>Bi-weekly check-in calls</li>
-          <li>Up to 10hrs of development per month</li>
-          <li>Same-day priority support</li>
-          <li>Proactive recommendations</li>
-          <li>Quarterly strategy session</li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1067,8 +448,7 @@
   <div class="container">
     <div class="section-label">How It Works</div>
     <h2>From first call to live system</h2>
-    <p class="section-sub">A straightforward process with no surprise costs, no scope creep, and no work starting before you've signed off on the plan.</p>
-
+    <p class="section-sub">No surprise costs, no scope creep, and no work starting before you've signed off on the plan.</p>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-circle">01</div>
@@ -1078,7 +458,7 @@
       <div class="process-step">
         <div class="step-circle">02</div>
         <h4>Audit + Scope</h4>
-        <p>We review your current M365 setup and deliver a written scope with a fixed price — before any work begins.</p>
+        <p>We review your current M365 setup and deliver a written scope with a fixed price before any work begins.</p>
       </div>
       <div class="process-step">
         <div class="step-circle">03</div>
@@ -1088,7 +468,7 @@
       <div class="process-step">
         <div class="step-circle">04</div>
         <h4>Handoff + Support</h4>
-        <p>Your team is trained, everything is documented, and email support is included for 30–90 days post-launch.</p>
+        <p>Your team is trained, everything is documented, and email support is included post-launch.</p>
       </div>
     </div>
   </div>
@@ -1117,72 +497,14 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-left">
-      <div class="section-label">Get in Touch</div>
-      <h2>Start with a free discovery call</h2>
-      <p>Not sure if this is a fit? That's exactly what the discovery call is for. 30 minutes, no commitment, and you'll leave with a clear picture of what's possible for your business.</p>
-      <div class="contact-detail">
-        <div class="contact-row">
-          <div class="contact-row-icon">📧</div>
-          <a href="mailto:hello@aevon.ca">hello@aevon.ca</a>
-        </div>
-        <div class="contact-row">
-          <div class="contact-row-icon">📍</div>
-          <span>Lower Mainland, BC &mdash; remote-first, in-person available</span>
-        </div>
-      </div>
-      <a href="mailto:hello@aevon.ca?subject=Discovery Call Request&body=Hi, I'd like to book a free discovery call." class="btn btn-dark">
-        Email to Book a Call
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="contact-form">
-      <form action="mailto:hello@aevon.ca" method="GET" enctype="text/plain">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" name="First Name" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" name="Last Name" placeholder="Smith" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Work Email</label>
-          <input type="email" name="Email" placeholder="jane@yourcompany.com" required />
-        </div>
-        <div class="form-group">
-          <label>Company Size</label>
-          <select name="Company Size">
-            <option value="">Select range</option>
-            <option>1–10 employees</option>
-            <option>11–25 employees</option>
-            <option>26–50 employees</option>
-            <option>50+ employees</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>What are you looking for?</label>
-          <select name="Service">
-            <option value="">Select a service</option>
-            <option>M365 Audit + Automation (Starter)</option>
-            <option>SharePoint Intranet + AI Wiki</option>
-            <option>Complete Internal Platform (Full Build)</option>
-            <option>Retainer / Ongoing Support</option>
-            <option>Not sure yet — just exploring</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Anything else you'd like us to know?</label>
-          <textarea name="Message" placeholder="Describe your situation or the problem you're trying to solve..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message</button>
-        <p class="form-note">We'll respond within 1 business day to schedule your free call.</p>
-      </form>
+<!-- CTA STRIP -->
+<section id="cta">
+  <div class="cta-inner">
+    <h2>Ready to see what's possible?</h2>
+    <p>Book a free 30-minute discovery call. No commitment — just an honest look at where your biggest wins are.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-white">Book a Free Call</a>
+      <a href="services.html" class="btn btn-outline">View Services</a>
     </div>
   </div>
 </section>
@@ -1191,35 +513,25 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="8" fill="url(#footer-grad)"/>
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="url(#fg1)"/>
         <path d="M16 7L8 13v12h5v-7h6v7h5V13L16 7z" fill="white" fill-opacity="0.9"/>
         <circle cx="16" cy="12" r="2" fill="white"/>
-        <defs>
-          <linearGradient id="footer-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#6366F1"/>
-            <stop offset="1" stop-color="#38BDF8"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="fg1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
       </svg>
       <span class="footer-logo-text">Aevon</span>
     </div>
     <div class="footer-right">
       <div>Lower Mainland, BC &nbsp;&middot;&nbsp; <a href="mailto:hello@aevon.ca">hello@aevon.ca</a></div>
-      <div style="margin-top: 4px;">&copy; 2026 Aevon. All rights reserved.</div>
+      <div style="margin-top:4px;">&copy; 2026 Aevon. All rights reserved.</div>
     </div>
   </div>
 </footer>
 
 <script>
-  // Nav scroll effect
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
-  // Trigger on load in case page is already scrolled
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
   if (window.scrollY > 40) nav.classList.add('scrolled');
 </script>
-
 </body>
 </html>
